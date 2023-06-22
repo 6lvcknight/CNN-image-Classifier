@@ -31,3 +31,11 @@ for image_class in os.listdir(data_dir):
                 print('Issue with image {}'.format(image_path))
                 #os.remove(image_path)
   
+import numpy as np
+from matplotlib import pyplot as plt
+
+data = tf.keras.utils.image_dataset_from_directory('data')
+data_iterator = data.as_numpy_iterator() ### getting an error
+batch = next(data_iterator) #Unknown image file format. One of JPEG, PNG, GIF, BMP required.
+
+
